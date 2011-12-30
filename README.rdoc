@@ -1,0 +1,15 @@
+= Range polyfill
+
+This is a polyfill for implementing the HTML5 <tt><input type="range"></tt> element in browsers that do not currently support it.
+
+== Usage
+
+Using it is easy — simply include the +range-polyfill.js+ file in the HEAD of the HTML page. You can then use <tt><input type="range"></tt> elements normally.
+
+If Modernizr detects that the browser doesn't support <tt><input type="range"></tt>, the script will search for these elements and replace them with jQuery UI slider widgets. <tt><output></tt> elements that are set to display the range's value (via a <tt>onforminput="value = name_of_element.value"</tt> attribute) will also be altered to work with the slider instead.
+
+A default CSS file is provided. You may edit this file to style the sliders to make them look the way you want.
+
+== Dependencies
+
+This script requires jQuery[http://jquery.com/], jQuery UI[http://jqueryui.com/], and Modernizr[http://www.modernizr.com/].

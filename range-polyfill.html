@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>Range polyfill</title>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.8.17/themes/base/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" href="range-polyfill.css">
+    <style type="text/css">
+table {
+  border: 1px outset gray;
+  width: 100%;
+}
+
+table td {
+  border: 1px inset gray;
+  padding: 5px 15px;
+}
+
+output {
+  color: #009000;
+}
+
+.custom-range {
+  border: 2px dashed gray;
+  background-color: #CCCCCC;
+  color: #FF0000;
+  padding: 10px 2px;
+}
+
+.custom-vertical-range {
+  height: 300px;
+  width: 60px;
+  border: 2px dashed #00CC00;
+  background-color: #CCFFCC;
+  color: #009900;
+}
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
+    <script type="text/javascript" src="range-polyfill.js"></script>
+  </head>
+  <body>
+<form id="form-demo">
+<table>
+<tr>
+<td style="width: 10%">Default min, max, step:</td>
+<td style="width: 85%"><input name="some_number" type="range" min="0" max="100" step="5" /></td>
+<td style="width: 5%"><output onforminput="value = some_number.value"></output></td>
+</tr>
+<tr>
+<td>No min:</td>
+<td><input name="some_number_no_min" type="range" max="100" step="5" /></td>
+<td><output onforminput="value = some_number_no_min.value"></output></td>
+</tr>
+<tr>
+<td>No max:</td>
+<td><input name="some_number_no_max" type="range" min="0" step="5" /></td>
+<td><output onforminput="value = some_number_no_max.value"></output></td>
+</tr>
+<tr>
+<td>No step:</td>
+<td><input name="some_number_no_step" type="range" min="0" max="100" /></td>
+<td><output onforminput="value = some_number_no_step.value"></output></td>
+</tr>
+<tr>
+<td>With class styling:</td>
+<td><input name="some_number_class_styled" type="range" min="0" max="100" class="custom-range" /></td>
+<td><output onforminput="value = some_number_class_styled.value"></output></td>
+</tr>
+<tr>
+<td>With inline styling:</td>
+<td><input name="some_number_styled" type="range" min="0" max="100" style="color: #009900; background-color: #99CCFF; border: 2px solid #003300; padding: 10px 2px;" /></td>
+<td><output onforminput="value = some_number_styled.value"></output></td>
+</tr>
+<tr>
+<td>Vertical style:</td>
+<td><input name="some_number_vertical" type="range" min="0" max="100" step="5" style="height: 300px; width: 60px;" /></td>
+<td><output onforminput="value = some_number_vertical.value"></output></td>
+</tr>
+<tr>
+<td>With marks:</td>
+<td><input name="some_number_marks" type="range" min="0" max="100" list="myMarkers" />
+<datalist id="myMarkers">
+ <option value="0" />
+ <option value="25" />
+ <option value="50" />
+ <option value="90" />
+ <option value="100" />
+</datalist>
+</td>
+<td><output onforminput="value = some_number_marks.value"></output></td>
+</tr>
+<tr>
+<td>Vertical with marks:</td>
+<td><input name="some_number_vertical_marks" type="range" min="0" max="100" list="myVMarkers" style="height: 300px; width: 60px;" />
+<datalist id="myVMarkers">
+ <option value="0" />
+ <option value="25" />
+ <option value="50" />
+ <option value="90" />
+ <option value="100" />
+</datalist>
+</td>
+<td><output onforminput="value = some_number_vertical_marks.value"></output></td>
+</tr>
+<tr>
+<td>Vertical with marks and class styling:</td>
+<td><input name="some_number_vertical_class_marks" type="range" min="0" max="100" list="myVCMarkers" class="custom-vertical-range" />
+<datalist id="myVCMarkers">
+ <option value="0" />
+ <option value="25" />
+ <option value="50" />
+ <option value="90" />
+ <option value="100" />
+</datalist>
+</td>
+<td><output onforminput="value = some_number_vertical_class_marks.value"></output></td>
+</tr>
+</table>
+<br /><br /> 
+<input type="submit" /> 
+</form>
+</body>
+</html>

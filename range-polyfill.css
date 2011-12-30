@@ -1,0 +1,48 @@
+div.ui-slider {
+  background-color: #333333;
+  background-image: none;
+  border: 2px inset #CCCCCC;
+}
+
+div.ui-slider-horizontal {
+  height: 0.2em;
+}
+
+div.ui-slider-vertical {
+  width: 0.2em;
+}
+
+div.ui-slider a.ui-slider-handle {
+  background-color: #CCCCCC;
+  background-image: none;
+  border: 2px outset #CCCCCC;
+}
+
+div.ui-slider-horizontal a.ui-slider-handle {
+  height: 1em;
+  width: 0.5em;
+  margin-top: -0.2em;
+  margin-left: -0.25em;
+}
+
+div.ui-slider-vertical a.ui-slider-handle {
+  height: 0.5em;
+  width: 1em;
+  margin-left: -0.25em;
+}
+
+.range-tick-mark {
+  background-color: black;
+}
+
+.range-tick-mark-horizontal {
+  width: 2px;
+  height: 0.5em;
+  margin-top: 0.7em;
+}
+
+.range-tick-mark-vertical {
+  width: 0.5em;
+  height: 2px;
+  margin-left: 0.7em;
+}
