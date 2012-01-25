@@ -2,12 +2,12 @@ $(function(){
   if (!Modernizr.inputtypes.range) {
     $('input[type="range"]').each(function(index) {
       var rangeElem = this;
-      var min = parseFloat($(rangeElem).attr('min')), max = parseFloat($(rangeElem).attr('max')), step = parseFloat($(rangeElem).attr('step'));
+      var min = parseFloat($(rangeElem).attr('min')), max = parseFloat($(rangeElem).attr('max')), step = parseFloat($(rangeElem).attr('step')), value = parseFloat($(rangeElem).attr('value')) ;
       var hiddenField = document.createElement('input');
       $(hiddenField).attr({
         type: "hidden",
         name: $(rangeElem).attr('name'),
-        value: $(rangeElem).attr('value') || min || 0
+        value: value || min || 0
       })
       var sliderContainerDiv = document.createElement('div');
       if (rangeElem.hasAttribute('class')) {
@@ -38,6 +38,7 @@ $(function(){
         min: min,
         max: max,
         step: step,
+        value: value || min || 0,
         orientation: (vertical) ? 'vertical' : 'horizontal',
         change: function(event, ui) {
           $(hiddenField).attr('value', $(sliderDiv).slider( "option", "value" ));
